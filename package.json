@@ -1,0 +1,22 @@
+{
+  "name": "delamerced-cs233whw1",
+  "version": "1.0.0",
+  "description": "Homework1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antonio90-44/CS233W-HW1.git"
+  },
+  "author": "Antonio De la Merced",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antonio90-44/CS233W-HW1/issues"
+  },
+  "homepage": "https://github.com/Antonio90-44/CS233W-HW1#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
