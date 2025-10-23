@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Antonio90-44/CS233W-HW1#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "sanitize-html": "^2.17.0"
   }
 }

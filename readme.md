@@ -1,23 +1,20 @@
 * Antonio De la Merced 
 
-* 10/06/2025
+* 10/21/2025
 
-* Homework1
+# Homework3 Working with Middleware & Error Handling
 
+## Tests
+* Test the logger by opening a route
+* check the request.log file for entries 
+* Test sanitize middleware by sending inputs in Html tags in Url 
 
-1.Description
-
-Getting started with Express - basic back-end for Shopping List
-
-2.Instructions for dependencies and how to install them
-
-We will need node and Express, to install enter commands in the terminal:
-
--npm init- to start node
-
--npm install express- install express and repository for github
-
--node server.js- to run the server and open the file in localhost:3000 or localhost:3000/about
+### Middelware order
+* express.json - parse JSON body
+* Logger - logs request info
+* Sanitize - cleans url
+* Route - process the request
+* Error handler - mark the errors
 
 
 
