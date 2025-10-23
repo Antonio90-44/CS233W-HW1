@@ -7,7 +7,9 @@
 ## Tests
 * Test the logger by opening a route
 * check the request.log file for entries 
-* Test sanitize middleware by sending inputs in Html tags in Url 
+* Test sanitize middleware by sending inputs in Html tags in Url(
+    /list
+)
 
 ### Middelware order
 * express.json - parse JSON body
