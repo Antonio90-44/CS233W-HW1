@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <main>
+        <h2><%= item.itemName %></h2>
+        <p>Category: <%= item.section %></p>
+        <% if(item.coupon) { %>
+          <p>✂ Clip Coupon</p>
+        <% } %>
+        <p>ID: <%= item.id %></p>
+      </main>
+</body>
+</html>
+<%- include("partials/footer") %>

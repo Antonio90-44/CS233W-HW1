@@ -1,22 +1,13 @@
 * Antonio De la Merced 
 
-* 10/21/2025
+* 11/01/2025
 
-# Homework3 Working with Middleware & Error Handling
+# Homework4 Creating Viewa Using a Template Engine
 
 ## Tests
-* Test the logger by opening a route
-* check the request.log file for entries 
-* Test sanitize middleware by sending inputs in Html tags in Url(
-    /list
-)
-
-### Middelware order
-* express.json - parse JSON body
-* Logger - logs request info
-* Sanitize - cleans url
-* Route - process the request
-* Error handler - mark the errors
-
+* http://localhost:3000/ - renders index.ejs and shows my Partials folder and two links for my /lists
+* /lists - renders list.ejs in form of cards to display all my list from data.js, products and categories . 
+* /lists/item/1 will display a selected item 
+* /lists/item/999 will direct you to a Not Found Page
 
 

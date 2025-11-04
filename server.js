@@ -1,9 +1,9 @@
 /*
     * server.js
     *
-    * Homework 3
+    * Homework 4
     * 
-    * 10/21/2025
+    * 11/01/2025
     * 
     * Antonio De la Merced
 */
@@ -14,17 +14,31 @@ const app = express();
 const PORT = 3000;
 const logger = require('./middleware/logger');
 const sanitizeHtml = require('./middleware/sanitize');
+const lists = require('./routes/lists');
 
 //json middleware
 app.use(express.json());
 app.use(logger);
 
+//ejs
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(express.static("public"));
+
+
 
 //routing
 app.get("/", (req, res) => {
     const currentDate = new Date();
-    res.send(`<h1>Homework 3 Shopping list - Middleware /h1><p>${currentDate}</p>`);
+    res.render("index", { title: "Homework 4 - Shopping List", currentDate });
 });
+
+app.get('/about', (req, res) => {
+    res.send(`<h1>About Homework4</h1><p>Created by: Antonio De la Merced</p><p>Term: Fall 2025</p>
+    `);
+  });
+
+app.use("/lists", lists);
 
 app.get("/", (req, res) => {
     const userInput = "<h2>This is <a href='http://www.eek.com'>potentially <script>dangerous</script> text</h2>";
@@ -35,20 +49,11 @@ app.get("/", (req, res) => {
 });
 
 app.use((theError, request, response, next) => {
-    console.error("[ERROR]" + theError.message)
+    console.error("[ERROR] " + theError.message);
     const theStatus = theError.status || 500;
-    response.status(theStatus).json({issue: "So sorry, we detected an error" +
-        theError.message });
-})
-
-const lists = require('./routes/lists')
-app.use('/lists', lists);
-
-
-app.get('/about', (req, res) => {
-  res.send(`<h1>About Homework3</h1><p>Created by: Antonio De la Merced</p><p>Term: Fall 2025</p>
-  `);
+    response.status(theStatus).json({issue: "So sorry, we detected an error: " + theError.message });
 });
+
 //start the server
 app.listen(PORT, () => {
     console.log("server is running")
