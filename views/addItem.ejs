@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+    <body>
+    <h2><%= title %></h2>
+        <form action="/addItem" method="POST">
+            <label>Item Name:</label>
+            <input type="text" name="itemName" required><br><br>
+
+            <label>Section:</label>
+            <select name="section" required>
+                <option value="">Select a section</option>
+                <option value="produce">Produce</option>
+                <option value="deli">Deli</option>
+                <option value="frozen">Frozen</option>
+            </select><br><br>
+
+            <label>Coupon:</label>
+            <input type="radio" name="coupon" value="true"> Yes
+            <input type="radio" name="coupon" value="false" checked> No<br><br>
+
+            <button type="submit">Add Item</button>
+        </form>
+    </body>
+</html>
+<%- include("partials/footer") %>

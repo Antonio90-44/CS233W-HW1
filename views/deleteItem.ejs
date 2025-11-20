@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+    <body>
+        <h2><%= title %></h2>
+        <form action="/deleteItem" method="POST">
+            <p>Select an item to delete:</p>
+            <% listItems.forEach(item => { %>
+              <input type="radio" name="itemId" value="<%= item.id %>">
+              <%= item.itemName %> (<%= item.section %>)<br>
+            <% }) %>
+            <br>
+            <button type="submit">Delete Selected Item</button>
+          </form>
+    </body>
+
+
+</html>
+<%- include("partials/footer") %>

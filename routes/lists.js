@@ -3,7 +3,7 @@
 
 const express = require('express');
 const router = express.Router();
-let listItems = require('../data/data');
+let listItems = require('../data/data.js');
 
 
 router.get("/", (req, res) => {
